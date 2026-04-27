@@ -1,0 +1,14 @@
+# Scan satu IP
+sudo ./netscout.sh -t 192.168.1.1 --accept-tos
+
+# Scan seluruh subnet dengan profil penuh
+sudo ./netscout.sh -t 192.168.1.0/24 -p full --accept-tos
+
+# Scan stealth dengan rate limit
+sudo ./netscout.sh -t 10.0.0.0/24 -p stealth -r 200 --accept-tos
+
+# Dry run (lihat perintah tanpa eksekusi)
+sudo ./netscout.sh -t 192.168.1.1 --dry-run --accept-tos
+
+# Generate laporan dari scan sebelumnya
+sudo ./netscout.sh --report-only -o ./scan_results/20240101_120000/ --accept-tos
